@@ -330,39 +330,10 @@
     }
 
     /* Logo Recreation: Graphic Open Frame Z Mark + GROUP */
-    /* Official Logo Recreation: Open Frame Z Mark + Z GROUP Typography */
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-    }
-
-    .logo-mark-svg {
-      width: 44px;
+    .brand-logo-svg {
       height: 44px;
-      flex-shrink: 0;
-    }
-
-    .logo-text-inline {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      font-family: var(--font-heading);
-      line-height: 1;
-    }
-
-    .logo-text-z {
-      font-size: 1.85rem;
-      font-weight: 700;
-      color: var(--c-blue-corp);
-    }
-
-    .logo-text-group {
-      font-size: 1.85rem;
-      font-weight: 500;
-      color: var(--c-grey-brand);
-      letter-spacing: 0.22em;
+      width: auto;
+      display: block;
     }
 
     /* Nav Links */
@@ -1201,19 +1172,19 @@
     <div class="container nav-container">
       
       <!-- Brand Logo (Official Vector Recreation) -->
-      <a href="#hero" class="brand-logo" aria-label="Z Group Inicio">
-        <svg class="logo-mark-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <a href="#hero" aria-label="Z Group Inicio" style="text-decoration: none; display: block;">
+        <svg class="brand-logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
           <!-- Top-Right Grey Open Bracket -->
-          <path d="M30 10 H90 V72" stroke="#74777B" stroke-width="5" stroke-linecap="square"/>
+          <path d="M16 6 H54 V44" stroke="#74777B" stroke-width="3.5" stroke-linecap="square"/>
           <!-- Bottom-Left Corporate Blue Open Bracket -->
-          <path d="M10 28 V90 H72" stroke="#00325F" stroke-width="5" stroke-linecap="square"/>
-          <!-- Central Bold Z -->
-          <text x="50" y="67" font-family="'Barlow Condensed', 'Inter', sans-serif" font-size="56" font-weight="700" fill="#00325F" text-anchor="middle">Z</text>
+          <path d="M6 16 V54 H44" stroke="#00325F" stroke-width="3.5" stroke-linecap="square"/>
+          <!-- Central Z inside box (Height = 24px, Center = y=30) -->
+          <path d="M18 18 H36 V22 L24.75 38 H36 V42 H18 V38 L29.25 22 H18 V18 Z" fill="#00325F"/>
+          
+          <!-- Z GROUP Text: Exact 90% size (21.6px), Centered at Red Line y=30 -->
+          <text x="70" y="30.5" font-family="'Barlow Condensed', sans-serif" font-size="25" font-weight="700" fill="#00325F" dominant-baseline="central">Z</text>
+          <text x="92" y="30.5" font-family="'Barlow Condensed', sans-serif" font-size="25" font-weight="500" fill="#74777B" letter-spacing="4.5" dominant-baseline="central">GROUP</text>
         </svg>
-        <div class="logo-text-inline">
-          <span class="logo-text-z">Z</span>
-          <span class="logo-text-group">GROUP</span>
-        </div>
       </a>
 
       <!-- Desktop & Mobile Navigation Links -->
@@ -1786,16 +1757,14 @@
     <div class="container footer-container">
       
       <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-          <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M30 10 H90 V72" stroke="#74777B" stroke-width="5" stroke-linecap="square"/>
-            <path d="M10 28 V90 H72" stroke="#FFFFFF" stroke-width="5" stroke-linecap="square"/>
-            <text x="50" y="67" font-family="'Barlow Condensed', 'Inter', sans-serif" font-size="56" font-weight="700" fill="#FFFFFF" text-anchor="middle">Z</text>
+        <div style="margin-bottom: 8px;">
+          <svg style="height: 38px; width: auto; display: block;" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 6 H54 V44" stroke="#74777B" stroke-width="3.5" stroke-linecap="square"/>
+            <path d="M6 16 V54 H44" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="square"/>
+            <path d="M18 18 H36 V22 L24.75 38 H36 V42 H18 V38 L29.25 22 H18 V18 Z" fill="#FFFFFF"/>
+            <text x="70" y="30.5" font-family="'Barlow Condensed', sans-serif" font-size="25" font-weight="700" fill="#FFFFFF" dominant-baseline="central">Z</text>
+            <text x="92" y="30.5" font-family="'Barlow Condensed', sans-serif" font-size="25" font-weight="500" fill="#9AA0A4" letter-spacing="4.5" dominant-baseline="central">GROUP</text>
           </svg>
-          <div class="logo-text-inline">
-            <span class="logo-text-z" style="color: #FFFFFF;">Z</span>
-            <span class="logo-text-group" style="color: #9AA0A4;">GROUP</span>
-          </div>
         </div>
         <div class="footer-copy">
           © <span id="year">2026</span> Z Group Foodtech. Todos los derechos reservados. Tucumán, Argentina.
