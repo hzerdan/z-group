@@ -481,8 +481,9 @@
     }
 
     .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 24px;
     }
 
@@ -492,7 +493,9 @@
       padding: 32px 28px;
       border-radius: var(--radius-sm);
       transition: all var(--transition-fast);
-      height: 100%;
+      flex: 0 1 calc(33.333% - 16px);
+      min-width: 280px;
+      max-width: 380px;
       display: flex;
       flex-direction: column;
     }
@@ -1141,6 +1144,11 @@
 
       .methodology-grid, .potential-grid, .institutions-grid {
         grid-template-columns: 1fr;
+      }
+
+      .pillar-card {
+        flex: 1 1 100%;
+        max-width: 100%;
       }
 
       .hero-metric-grid {
