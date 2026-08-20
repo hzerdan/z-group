@@ -1810,12 +1810,12 @@
         });
       }
 
-      // 3. Contact Form Submission Simulation
+      // 3. Contact Form Submission (Real FormSubmit AJAX Integration)
       const contactForm = document.getElementById('contactForm');
       const formFeedback = document.getElementById('formFeedback');
 
       if (contactForm && formFeedback) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
           e.preventDefault();
           
           // Basic validation
@@ -1828,22 +1828,50 @@
             return;
           }
 
-          // Simulate API dispatch state
           const submitBtn = contactForm.querySelector('button[type="submit"]');
           const originalBtnText = submitBtn.textContent;
           submitBtn.textContent = 'Enviando...';
           submitBtn.disabled = true;
 
-          setTimeout(() => {
-            contactForm.reset();
+          try {
+            const response = await fetch('https://formsubmit.co/ajax/zerdanaj@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                _subject: `Nuevo mensaje de contacto en Z Group (de ${name})`,
+                _template: 'table',
+                Nombre: name,
+                Email: email,
+                Mensaje: message
+              })
+            });
+
+            if (response.ok) {
+              contactForm.reset();
+              formFeedback.style.backgroundColor = 'rgba(37, 211, 102, 0.1)';
+              formFeedback.style.borderColor = 'rgba(37, 211, 102, 0.3)';
+              formFeedback.style.color = '#0E7032';
+              formFeedback.textContent = '✓ ¡Gracias por contactarse! Su mensaje ha sido enviado correctamente. Nos pondremos en contacto a la brevedad.';
+              formFeedback.classList.add('is-visible');
+            } else {
+              throw new Error('Error en el envío');
+            }
+          } catch (error) {
+            formFeedback.style.backgroundColor = 'rgba(239, 68, 68, 0.1)';
+            formFeedback.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+            formFeedback.style.color = '#B91C1C';
+            formFeedback.textContent = 'Ocurrió un inconveniente al enviar el mensaje. Por favor intente nuevamente o contáctenos directamente por WhatsApp o Correo.';
+            formFeedback.classList.add('is-visible');
+          } finally {
             submitBtn.textContent = originalBtnText;
             submitBtn.disabled = false;
-            formFeedback.classList.add('is-visible');
-
             setTimeout(() => {
               formFeedback.classList.remove('is-visible');
-            }, 6000);
-          }, 1000);
+            }, 7000);
+          }
         });
       }
 
