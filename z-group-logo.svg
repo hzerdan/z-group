@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" fill="none">
+  <!-- Top-Right Grey Open Bracket -->
+  <path d="M16 6 H54 V44" stroke="#74777B" stroke-width="3.5" stroke-linecap="square"/>
+  <!-- Bottom-Left Corporate Blue Open Bracket -->
+  <path d="M6 16 V54 H44" stroke="#00325F" stroke-width="3.5" stroke-linecap="square"/>
+  <!-- Central Z inside box (Height = 24px, Center = y=30) -->
+  <path d="M18 18 H36 V22 L24.75 38 H36 V42 H18 V38 L29.25 22 H18 V18 Z" fill="#00325F"/>
+  
+  <!-- Z GROUP Text: 90% scale, Centered at y=30.5 -->
+  <text x="70" y="30.5" font-family="'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif" font-size="25" font-weight="700" fill="#00325F" dominant-baseline="central">Z</text>
+  <text x="92" y="30.5" font-family="'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif" font-size="25" font-weight="500" fill="#74777B" letter-spacing="4.5" dominant-baseline="central">GROUP</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60" fill="none">
+  <!-- Top-Right Grey Open Bracket -->
+  <path d="M16 6 H54 V44" stroke="#74777B" stroke-width="3.5" stroke-linecap="square"/>
+  <!-- Bottom-Left Corporate Blue Open Bracket -->
+  <path d="M6 16 V54 H44" stroke="#00325F" stroke-width="3.5" stroke-linecap="square"/>
+  <!-- Central Z inside box (Height = 24px, Center = y=30) -->
+  <path d="M18 18 H36 V22 L24.75 38 H36 V42 H18 V38 L29.25 22 H18 V18 Z" fill="#00325F"/>
+</svg>
